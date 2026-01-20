@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fit Tiku Gym</title>
+  <style>
+    :root{
+      --black:#000000;
+      --dark:#0b1220;
+      --card:#111827;
+      --red:#ef4444;
+      --orange:#f97316;
+      --lime:#22c55e;
+      --text:#e5e7eb;
+      --muted:#9ca3af;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: radial-gradient(1200px 400px at 50% -10%, #111827, var(--black));
+    }
+    header {
+      position: sticky; top: 0; z-index: 10;
+      background: linear-gradient(90deg, var(--black), var(--dark));
+      color: #ffffff;
+      padding: 18px 40px;
+      border-bottom: 2px solid var(--red);
+    }
+    header h1 { margin: 0; color: var(--red); letter-spacing: 1px; }
+    nav a { color: #ffffff; margin-right: 18px; text-decoration: none; font-weight: 600; }
+    nav a:hover { color: var(--orange); }
+    section { padding: 70px 40px; }
+    .hero {
+      background: linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.78)), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48');
+      background-size: cover; background-position: center;
+      color: #ffffff; text-align: center; padding: 130px 20px;
+    }
+    .hero h2 { font-size: 46px; margin-bottom: 10px; }
+    .hero p { color: var(--muted); }
+    .btn {
+      background: linear-gradient(90deg, var(--red), var(--orange));
+      color: #ffffff; border: none; padding: 14px 34px; font-size: 16px;
+      border-radius: 999px; cursor: pointer; margin-top: 22px;
+      box-shadow: 0 10px 30px rgba(239,68,68,.35);
+    }
+    .btn.alt { background: linear-gradient(90deg, var(--lime), #16a34a); box-shadow: 0 10px 30px rgba(34,197,94,.35); }
+    .services, .pricing, .gallery {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 26px;
+    }
+    .card {
+      background: linear-gradient(180deg, var(--card), #0b1220);
+      border-radius: 16px; padding: 30px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.6);
+      text-align: center; border: 1px solid #1f2937;
+    }
+    .card h3 { color: var(--orange); }
+    .price { font-size: 38px; color: var(--red); margin: 14px 0; }
+    .chip { display:inline-block; padding:6px 10px; border-radius:999px; background:#0b1220; border:1px solid #1f2937; color:var(--muted); margin-top:8px }
+    .gallery img{
+      width:100%; height:220px; object-fit:cover; border-radius:16px;
+      filter: saturate(1.1) contrast(1.05);
+    }
+    .timings {
+      display:grid; grid-template-columns: 1fr 1fr; gap:26px; align-items:stretch;
+    }
+    .time-box{
+      background: linear-gradient(180deg, #0b1220, #020617);
+      border-radius:18px; padding:30px; border:1px solid #1f2937;
+    }
+    footer {
+      background: linear-gradient(90deg, var(--black), var(--dark));
+      color: var(--muted); text-align: center; padding: 28px; border-top: 2px solid var(--red);
+    }
+    @media (max-width: 768px){ .timings{ grid-template-columns: 1fr } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Fit Tiku Gym</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#programs">Programs</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#timings">Timings</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <h2>Build Your Body. Build Your Confidence.</h2>
+    <p>Modern equipment • Expert trainers • Best results</p>
+    <button class="btn">Join Now</button>
+  </section>
+
+  <section id="about">
+    <h2>About Fit Tiku Gym</h2>
+    <p>
+      Fit Tiku Gym is a premium fitness center designed for people who want real, visible results.
+      We focus on strength, fat loss, flexibility, and overall health using scientifically planned workouts.
+      Our gym is equipped with modern machines, certified trainers, and a motivating environment
+      that helps beginners and advanced athletes achieve their goals safely.
+    </p>
+    <p>
+      Whether your goal is weight loss, muscle building, or staying active and healthy,
+      Fit Tiku Gym provides personalized guidance, flexible timings, and affordable membership plans.
+    </p>
+    <button class="btn alt" onclick="scrollToSection('pricing')">View Memberships</button>
+  </section>
+
+  <section id="programs">
+    <h2>Our Programs</h2>
+    <div class="services">
+      <div class="card">
+        <h3>Weight Training</h3>
+        <p>Build strength and muscle with modern equipment.</p>
+      </div>
+      <div class="card">
+        <h3>Cardio Training</h3>
+        <p>Improve stamina and burn fat effectively.</p>
+      </div>
+      <div class="card">
+        <h3>Personal Training</h3>
+        <p>One-on-one training with certified trainers.</p>
+      </div>
+      <div class="card">
+        <h3>Yoga & Stretching</h3>
+        <p>Improve flexibility, balance, and mental focus.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Membership Plans</h2>
+    <div class="pricing">
+      <div class="card"><h3>1 Month</h3><div class="price">$200</div><span class="chip">Quick start</span></div>
+      <div class="card"><h3>3 Months</h3><div class="price">$500</div><span class="chip">Consistency</span></div>
+      <div class="card"><h3>6 Months</h3><div class="price">$600</div><span class="chip">Best value</span></div>
+      <div class="card"><h3>12 Months</h3><div class="price">$800</div><span class="chip">Max savings</span></div>
+    </div>
+  </section>
+
+  <section id="gallery">
+    <h2>Gym Gallery</h2>
+    <div class="gallery">
+      <img src="https://images.unsplash.com/photo-1558611848-73f7eb4001a1" alt="Gym 1" />
+      <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438" alt="Gym 2" />
+      <img src="https://images.unsplash.com/photo-1526401485004-2fda9f6b1b3b" alt="Gym 3" />
+      <img src="https://images.unsplash.com/photo-1576678927484-cc907957088c" alt="Gym 4" />
+    </div>
+  </section>
+
+  <section id="timings">
+    <h2>Gym Timings</h2>
+    <div class="timings">
+      <div class="time-box">
+        <h3 style="color:var(--lime)">Morning</h3>
+        <p><strong>5:00 AM – 1:00 PM</strong></p>
+        <p class="chip">Best for fat loss & energy</p>
+      </div>
+      <div class="time-box">
+        <h3 style="color:var(--orange)">Evening</h3>
+        <p><strong>4:00 PM – 10:00 PM</strong></p>
+        <p class="chip">Strength & muscle building</p>
+      </div>
+    </div>
+    <p id="openStatus" class="chip" style="margin-top:16px"></p>
+  </section>
+
+  <section id="stats">
+    <h2>Our Gym in Numbers</h2>
+    <div class="services">
+      <div class="card"><h3>Active Members</h3><div class="price" id="members">0</div></div>
+      <div class="card"><h3>Certified Trainers</h3><div class="price" id="trainers">0</div></div>
+      <div class="card"><h3>Years of Experience</h3><div class="price" id="years">0</div></div>
+    </div>
+  </section>
+
+  <section id="admin-login">
+    <h2>Admin Login</h2>
+    <p class="chip">Admin access required to view & print receipts</p>
+    <div class="services">
+      <div class="card">
+        <input id="adminId" placeholder="Admin ID" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px" />
+        <input id="adminPass" type="password" placeholder="Password" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px" />
+        <button class="btn" onclick="adminLogin()">Login</button>
+        <p id="adminMsg" class="chip"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="admission" style="display:none">
+    <h2>Online Admission Form</h2>
+    <p>
+      Fill out the admission form below to join <strong>Fit Tiku Gym</strong>.
+      Your details will be securely saved in the browser using JavaScript.
+      This simulates a real online admission system.
+    </p>
+    <div class="services">
+      <div class="card">
+        <h3>Member Details</h3>
+        <input id="a_name" placeholder="Full Name" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px" />
+        <input id="a_age" type="number" placeholder="Age" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px" />
+        <input id="a_phone" placeholder="Phone Number" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px" />
+        <select id="a_plan" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px">
+          <option value="1 Month">1 Month</option>
+          <option value="3 Months">3 Months</option>
+          <option value="6 Months">6 Months</option>
+          <option value="12 Months">12 Months</option>
+        </select>
+        <button class="btn" onclick="saveAdmission()">Submit Admission</button>
+        <p id="admissionMsg" class="chip"></p>
+      </div>
+
+      <div class="card">
+        <h3>Saved Admissions</h3>
+        <p class="chip">Data saved using JavaScript (Local Storage)</p>
+        <ul id="admissionList" style="text-align:left;color:#e5e7eb"></ul>
+        <button class="btn" onclick="printReceipt()">Print Latest Receipt</button>
+        <button class="btn alt" onclick="clearAdmissions()">Clear All Data</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tools">
+    <h2>Fitness Tools</h2>
+    <div class="services">
+      <div class="card">
+        <h3>BMI Calculator</h3>
+        <input id="w" placeholder="Weight (kg)" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px" />
+        <input id="h" placeholder="Height (cm)" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px" />
+        <button class="btn" onclick="calcBMI()">Calculate</button>
+        <p id="bmiResult" class="chip"></p>
+      </div>
+      <div class="card">
+        <h3>Membership Cost Calculator</h3>
+        <select id="plan" style="width:100%;padding:10px;border-radius:8px;border:1px solid #1f2937;background:#020617;color:#fff;margin-bottom:10px">
+          <option value="200">1 Month – $200</option>
+          <option value="500">3 Months – $500</option>
+          <option value="600">6 Months – $600</option>
+          <option value="800">12 Months – $800</option>
+        </select>
+        <button class="btn" onclick="calcMembership()">Calculate</button>
+        <p id="memberCost" class="chip"></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>📍 Address: Your City, India</p>
+    <p>📞 Phone: +91-XXXXXXXXXX</p>
+    <p>📧 Email: fittikugym@email.com</p>
+  </section>
+
+  <footer>
+    <p>© 2025 Fit Tiku Gym. All rights reserved.</p>
+    <div id="whatsapp" style="position:fixed;right:20px;bottom:20px;background:#22c55e;color:#000;padding:14px 18px;border-radius:999px;cursor:pointer;font-weight:700;box-shadow:0 10px 30px rgba(34,197,94,.5)">WhatsApp</div>
+
+  <footer>
+    <p>© 2025 Fit Tiku Gym. All rights reserved.</p>
+  </footer>
+
+                <script>
+    function scrollToSection(id){ const el=document.getElementById(id); if(el) el.scrollIntoView({behavior:'smooth'}); }
+
+    const header=document.querySelector('header');
+    window.addEventListener('scroll',()=>{ header.style.boxShadow=window.scrollY>10?'0 10px 30px rgba(239,68,68,.25)':'none'; });
+
+    function checkStatus(){
+      const d=new Date();
+      const h=d.getHours()+d.getMinutes()/60;
+      const open=(h>=5 && h<=13) || (h>=16 && h<=22);
+      document.getElementById('openStatus').textContent=open?'🟢 Gym is OPEN now':'🔴 Gym is CLOSED now';
+    }
+    checkStatus(); setInterval(checkStatus,60000);
+
+    function calcBMI(){
+      const w=+document.getElementById('w').value;
+      const h=+document.getElementById('h').value/100;
+      if(!w||!h){ document.getElementById('bmiResult').textContent='Enter valid values'; return; }
+      const bmi=(w/(h*h)).toFixed(1);
+      let status='';
+      if(bmi<18.5) status='(Underweight)';
+      else if(bmi<25) status='(Normal)';
+      else if(bmi<30) status='(Overweight)';
+      else status='(Obese)';
+      document.getElementById('bmiResult').textContent='Your BMI: '+bmi+' '+status;
+    }
+
+    function animate(id,target){ let c=0; const el=document.getElementById(id);
+      const i=setInterval(()=>{ c++; el.textContent=c; if(c>=target) clearInterval(i); },20);
+    }
+    animate('members',350); animate('trainers',12); animate('years',5);
+
+    function calcMembership(){
+      const cost=document.getElementById('plan').value;
+      document.getElementById('memberCost').textContent='Total Amount: $'+cost;
+    }
+
+    function saveAdmission(){
+      const name=document.getElementById('a_name').value;
+      const age=document.getElementById('a_age').value;
+      const phone=document.getElementById('a_phone').value;
+      const plan=document.getElementById('a_plan').value;
+      if(name.length<2 || age<10 || phone.length<8){
+        document.getElementById('admissionMsg').textContent='Please enter valid details'; return;
+      }
+      const data={name,age,phone,plan,date:new Date().toLocaleString()};
+      let list=JSON.parse(localStorage.getItem('admissions'))||[];
+      list.push(data);
+      localStorage.setItem('admissions',JSON.stringify(list));
+      document.getElementById('admissionMsg').textContent='Admission saved successfully!';
+      loadAdmissions();
+    }
+
+    function loadAdmissions(){
+      const list=JSON.parse(localStorage.getItem('admissions'))||[];
+      const ul=document.getElementById('admissionList');
+      ul.innerHTML='';
+      list.forEach((m,i)=>{ ul.innerHTML+=`<li>${i+1}. ${m.name} - ${m.plan}</li>`; });
+    }
+    function clearAdmissions(){ localStorage.removeItem('admissions'); loadAdmissions(); }
+    loadAdmissions();
+
+    // PRINT RECEIPT
+    function printReceipt(){
+      const list=JSON.parse(localStorage.getItem('admissions'))||[];
+      if(list.length===0){ alert('No admissions found'); return; }
+      const m=list[list.length-1];
+      const w=window.open('','Receipt');
+      w.document.write(`<h2>Fit Tiku Gym - Admission Receipt</h2>
+      <p>Name: ${m.name}</p>
+      <p>Age: ${m.age}</p>
+      <p>Phone: ${m.phone}</p>
+      <p>Plan: ${m.plan}</p>
+      <p>Date: ${m.date}</p>
+      <hr><p>Thank you for joining Fit Tiku Gym</p>`);
+      w.print();
+    }
+
+    // ADMIN LOGIN
+    function adminLogin(){
+      const id=document.getElementById('adminId').value;
+      const pass=document.getElementById('adminPass').value;
+      if(id==='priyanshu' && pass==='1234567890'){
+        document.getElementById('adminMsg').textContent='Login successful';
+        document.getElementById('admission').style.display='block';
+        scrollToSection('admission');
+      } else {
+        document.getElementById('adminMsg').textContent='Invalid login';
+      }
+    }
+
+    document.getElementById('whatsapp').onclick=()=>{
+      window.open('https://wa.me/919999999999?text=Hi%20I%20want%20to%20join%20Fit%20Tiku%20Gym','_blank');
+    }
+  </script>
+</body>
+</html>
